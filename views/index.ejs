@@ -11,17 +11,18 @@
         <% if(locals.users) { %>
             <% users.forEach(user => { %>
             <li>
-                ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>
+                ID: <%= user.id %> <br>Name: <%= user.firstName %> <%= user.lastName %> <br> Email: <%= user.email %> <br> Age: <%= user.age %> <br> Bio: <%= user.bio %>
                 <a href="/<%= user.id %>/update">Update</a>
             </li>
             <% }); %>
         <% } %>
     </ul>
-    <a href="/create">Create a user</a>
+    <a href="/create">Create a user</a><br>
+    <!-- <a href="/searchUser" >Search a user</a> -->
     <ul>
         <% if(locals.users) {%>
             <% users.forEach(function(user) {%>
-                <li>ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %></li>
+                <li>ID: <%= user.id %> Name: <%= user.firstName %> <%= user.lastName %></li>
                 <a href="/<%= user.id %>/update">Update</a>
                 <!-- This time we are sending a post request to our route, so we need a form -->
                  <form action="/<%= user.id %>/delete" method="POST" style="display:inline;">
